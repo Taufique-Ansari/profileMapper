@@ -120,15 +120,11 @@ Complete profile management interface for administrators.
 
 ### Map Service Setup
 
-#### Option 1: Mapbox (Recommended)
-1. Sign up at [Mapbox](https://www.mapbox.com/)
-2. Get your access token
-3. Add to `.env` file as `VITE_MAPBOX_ACCESS_TOKEN`
+This application uses Leaflet, an open-source JavaScript library, with free OpenStreetMap tiles. No API key is required for basic usage.
 
-#### Option 2: Google Maps
-1. Enable Google Maps JavaScript API in Google Cloud Console
-2. Get your API key
-3. Add to `.env` file as `VITE_GOOGLE_MAPS_API_KEY`
+Attribution is required when using OpenStreetMap tiles. The attribution has been included in the map component.
+
+For more details on Leaflet, refer to the [Leaflet Quick Start Guide](https://leafletjs.com/examples/quick-start/).
 
 ### Theme Configuration
 The app supports light and dark themes. Modify `tailwind.config.js` to customize colors:
