@@ -26,6 +26,12 @@ export const Navigation = () => {
             </div>
           </div>
           <div className="flex items-center">
+            <Link
+              to="/login"
+              className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Admin Login
+            </Link>
             <ThemeToggle />
           </div>
         </div>

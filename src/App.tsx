@@ -4,6 +4,10 @@ import { Navigation } from '@/components/layout/Navigation'
 import { HomePage } from '@/pages/HomePage'
 import { ProfilesPage } from '@/pages/ProfilesPage'
 import { ProfileDetailsPage } from '@/pages/ProfileDetailsPage'
+import { AdminDashboard } from '@/pages/AdminDashboard'
+import { LoginPage } from '@/pages/LoginPage'
+import { ProtectedRoute } from '@/components/auth/ProtectedRoute'
+import { ErrorBoundary } from '@/components/common/ErrorBoundary'
 import { AppProvider } from '@/context/AppContext'
 
 export const App = () => {
@@ -22,16 +26,27 @@ export const App = () => {
           <meta name="twitter:description" content="Discover and connect with professionals around the world through an interactive map interface." />
         </Helmet>
 
-        <div className="min-h-screen bg-background dark:bg-background-dark">
-          <Navigation />
-          <main className="container mx-auto px-4 py-8">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/profiles" element={<ProfilesPage />} />
-              <Route path="/profiles/:id" element={<ProfileDetailsPage />} />
-            </Routes>
-          </main>
-        </div>
+        <ErrorBoundary>
+          <div className="min-h-screen bg-background dark:bg-background-dark">
+            <Navigation />
+            <main className="container mx-auto px-4 py-8">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/profiles" element={<ProfilesPage />} />
+                <Route path="/profiles/:id" element={<ProfileDetailsPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute>
+                      <AdminDashboard />
+                    </ProtectedRoute>
+                  }
+                />
+              </Routes>
+            </main>
+          </div>
+        </ErrorBoundary>
       </Router>
     </AppProvider>
   )

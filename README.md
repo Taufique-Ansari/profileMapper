@@ -52,14 +52,6 @@ npm install
 yarn install
 ```
 
-### 3. Environment Setup
-Create a `.env` file in the root directory and add your API keys:
-
-```env
-# Map Service API Key (choose one)
-VITE_MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
-# or
-VITE_GOOGLE_MAPS_API_KEY=your_google_maps_key_here
 
 # App Configuration
 VITE_APP_TITLE=Profile Mapping App
@@ -113,8 +105,6 @@ Interactive map component showing profile locations with markers.
 ### SearchBar & FilterPanel
 Real-time search and filtering functionality.
 
-### AdminDashboard
-Complete profile management interface for administrators.
 
 ## 🔧 Configuration
 
@@ -179,8 +169,7 @@ The application is fully responsive with breakpoints:
 ## 🔒 Admin Access
 
 To access the admin dashboard:
-1. Navigate to `/admin`
-2. Use the login credentials:
+1. Use the login credentials:
    - Username: `admin`
    - Password: `admin123`
 
